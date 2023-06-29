@@ -1,12 +1,8 @@
-cmake_minimum_required(VERSION 3.20)
-project(Project_db)
-add_executable(Project_db main.cpp phoneDB.cpp)
-# Указание пути к libpq++
+cmake_minimum_required(VERSION 3.10)
+project(libpqxx)
+set(PostgreSQL_ADDITIONAL_VERSION "15")
 add_subdirectory("D:\\Eugene\\dev\\tools\\libpqxx-7.7.5" libpqxx-build)
-# Включение C++17
-target_compile_features(Project_db PRIVATE cxx_std_17)
-target_link_libraries(Project_db pqxx) 
- 
-# Добавление библиотеки класса phoneDB
-add_library(phoneDB phoneDB.h)
-target_link_libraries(phoneDB PUBLLIC pqxx)
+add_executable(libpqxx main.cpp)
+target_compile_features(libpqxx  PRIVATE cxx_std_17) 
+target_link_libraries(libpqxx  pqxx)
+
