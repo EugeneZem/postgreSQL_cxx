@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(libpqxx)
 set(PostgreSQL_ADDITIONAL_VERSION "15")
 add_subdirectory("D:\\Eugene\\dev\\tools\\libpqxx-7.7.5" libpqxx-build)
-add_executable(libpqxx main.cpp)
+add_executable(libpqxx main.cpp phone.h phone.cpp )
 target_compile_features(libpqxx  PRIVATE cxx_std_17) 
 target_link_libraries(libpqxx  pqxx)
 
